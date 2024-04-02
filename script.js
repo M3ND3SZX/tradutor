@@ -1,5 +1,6 @@
-const traduzirSelect = document.getElementById('traduzirSelect')
-const traduzidoSelect = document.getElementById('traduzidoSelect')
+
+    const traduzirSelect = document.getElementById('traduzirSelect')
+    const traduzidoSelect = document.getElementById('traduzidoSelect')
     traduzidoSelect.value = 1
 const campoTraducao = document.getElementById('campoTraducao')
             campoTraducao.focus()
@@ -40,19 +41,19 @@ const bandeira1 = document.getElementById('bandeira1')
 const bandeira2 = document.getElementById('bandeira2')
 function atualizarBandeiras(){
     if(linguaTraduzida == idioma1){
-        bandeira1.src='./img/flag-for-flag-brazil-svgrepo-com.svg'
+        bandeira1.src='./img/flags/brazil.png'
     } if(linguaTraduzida==idioma2){
-        bandeira1.src='./img/flag-us-svgrepo-com.svg'
+        bandeira1.src='./img/flags/usa.png'
     } if(linguaTraduzida==idioma3){
-        bandeira1.src='./img/flag-for-flag-italy-svgrepo-com.svg'
+        bandeira1.src='./img/flags/espanha.png'   
     }
     
     if(linguaResultado == idioma1){
-        bandeira2.src='./img/flag-for-flag-brazil-svgrepo-com.svg'
+        bandeira2.src='./img/flags/brazil.png'
     } if(linguaResultado==idioma2){
-        bandeira2.src='./img/flag-us-svgrepo-com.svg'
+        bandeira2.src='./img/flags/usa.png'
     } if(linguaResultado==idioma3){
-        bandeira2.src='./img/flag-for-flag-italy-svgrepo-com.svg'
+        bandeira2.src='./img/flags/espanha.png'
     }
 }
 atualizarBandeiras()
@@ -128,7 +129,6 @@ function atualizarIdiomas(){
     }
     atualizarBandeiras()
 }
-
 
 const btnFalar = document.querySelector('#btnFalar')
 const text = document.querySelector('#campoTraducao')
