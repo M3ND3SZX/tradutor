@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Word</title>
+    <link rel="stylesheet" href="tradutor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="icon" type="img" href="./img/logoWW.png">
+    <script src="./script.js" defer></script>
+
+</head>
+<body>
+    <header>
+       <div class="fundo">
+           <div class="logo">
+            <img src="./img/logoWW.png" alt="logo do site">
+                <h2>World Words</h2>
+           </div>
+    
+       </div>
+    </header>
+
+    <div class="selects">
+        <select id="traduzirSelect">
+            <option value=0>Português</option>
+            <option value=1>Inglês</option>
+            <option value=2>Espanhol</option>
+          </select>
+          <select id="traduzidoSelect">
+            <option value=0>Português</option>
+            <option value=1>Inglês</option>
+            <option value=2>Espanhol</option>
+          </select>
+          <button onclick="atualizarIdiomas()">Atualizar idiomas</button>
+    </div>
+
+   <div class="translate">
+       <div class="caixa-traducao">
+           <div class="container">
+            <div class="top">
+                <h3>Traduzir</h3>
+                <img id=bandeira1>
+           </div>
+            <textarea id="campoTraducao" placeholder="Insira o texto..."></textarea>
+            <button id="btnFalar">Aperte e fale </button>
+           </div>
+
+       </div>
+       <div class="caixa-traducao">
+        <div class="container">
+         <div class="top">
+             <h3>Tradução</h3>
+             <img id="bandeira2">
+        </div>
+         <textarea id="campoTraduzido" placeholder="Tradução" disabled></textarea>
+        <select  id="voices"></select>
+        <button id="btnVoz">Aperte para Falar</button>
+        </div>
+
+    </div>
+   </div>
+   <img class="brightButton" id="botaoBright">
+   <input id="focusOut" style="opacity: 0;position: absolute;top: 0;">
+</body>
+</html>
