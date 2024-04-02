@@ -28,12 +28,20 @@ campoTraducao.addEventListener('keypress',(event)=>{
       const campoTraduzido = document.getElementById('campoTraduzido')
 
 async function traduzir(){
+
         const json = fetch(`https://api.mymemory.translated.net/get?q=${campoTraducao.value}&langpair=${linguaTraduzida}|${linguaResultado}`).then((response) => response.json())
         
         const response = await json
+
         const textoTraduzido = response.responseData.translatedText
+
+        if (textoTraduzido != '' || textoTraduzido != null){
+            document.getElementById('campoTraduzido').value = textoTraduzido;
+        }else{
+            console.log('ERRO')
+        }
+
         
-        document.getElementById('campoTraduzido').value = textoTraduzido;
 
 }
 
@@ -135,13 +143,13 @@ const text = document.querySelector('#campoTraducao')
 const recognition = createRecognition()
 let listening = false
 
-btnFalar.addEventListener('click', e => {
+btnFalar.addEventListener('click', (e) => {
     if(!recognition) return
 
     listening ? recognition.stop() : recognition.start()
 
-    btnFalar.innerHTML = listening? '': 'Parar de escutar'
-     traduzir()
+    btnFalar.textContent = listening? '': 'Parar de escutar'
+   
 
 })
 
@@ -158,7 +166,7 @@ function createRecognition(){
     recognition.onstart = () => console.log('started')
     recognition.onend = () => console.log('finished')
     recognition.onerror = e => console.log('error', e)
-    recognition.onresult = e => text.innerHTML = e.results[0] [0].transcript
+    recognition.onresult = e => text.value = e.results[0] [0].transcript
     return recognition
 
 }
